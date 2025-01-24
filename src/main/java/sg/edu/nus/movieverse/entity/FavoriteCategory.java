@@ -1,4 +1,5 @@
 package sg.edu.nus.movieverse.entity;
 
-public class FavoriteCategory {
+public enum FavoriteCategory {
+    WANT_TO_WATCH, WATCHED, FAVORITE
 }

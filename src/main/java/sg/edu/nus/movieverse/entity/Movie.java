@@ -18,7 +18,9 @@ public class Movie extends BaseEntity{
     private String title;
 
     private int releaseYear;
-    private double rating;
+    @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Rating> ratings;
+
     private int ratingCount;
 
     @Column(columnDefinition = "TEXT")
@@ -29,6 +31,9 @@ public class Movie extends BaseEntity{
     @ManyToOne
     @JoinColumn(name = "prequel")
     private Movie prequel;
+
+    @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Review> reviews;
 
     @ManyToOne
     @JoinColumn(name = "sequel")

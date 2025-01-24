@@ -7,7 +7,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "reviews")
+@Table(name = "reviews", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"user_id", "movie_id"})
+})
 @Data
 @Getter
 @Setter

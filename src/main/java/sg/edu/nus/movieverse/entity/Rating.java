@@ -22,7 +22,7 @@ public class Rating extends BaseEntity {
     private Movie movie;
 
     @Column(nullable = false)
-    private double score;
+    private int rating;
 
-    private String comment;
+
 }
